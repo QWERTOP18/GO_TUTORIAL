@@ -2,8 +2,8 @@ package piscine
 
 import "ft"
 
-func PrintAlphabet() {
-	for c := 'a'; c <= 'z'; c++ {
+func PrintReversealphabet() {
+	for c := 'z'; c <= 'a'; c-- {
 		ft.PrintRune(c)
 	}
 	ft.PrintRune('\n')
