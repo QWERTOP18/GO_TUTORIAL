@@ -3,9 +3,10 @@ package piscine
 import "ft"
 
 func IsNegative(nb int) {
-	if (nb < 0)
-		PrintRune('T')
-	else
-		PrintRune('F')
-	PrintRune('\n')
+	if (nb < 0) {
+		ft.PrintRune('T')
+	} else {
+		ft.PrintRune('F')
+	}
+	ft.PrintRune('\n')
 }
