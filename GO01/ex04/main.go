@@ -1,8 +1,6 @@
 package main
-import (
-	"fmt"
-	"piscine"
-)
+import "piscine"
+
 func main() {
 	piscine.PrintStr("Hello World!")
 }

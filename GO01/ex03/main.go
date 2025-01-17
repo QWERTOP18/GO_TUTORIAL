@@ -4,7 +4,9 @@ import (
 	"piscine"
 )
 func main() {
-	n := 0
-	piscine.PointOne(&n)
-	fmt.Println(n)
+	a := 13
+	b := 2
+	piscine.UltimateDivMod(&a, &b)
+	fmt.Println(a)
+	fmt.Println(b)
 }

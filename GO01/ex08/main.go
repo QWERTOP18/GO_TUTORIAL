@@ -4,7 +4,7 @@ import (
 	"piscine"
 )
 func main() {
-	n := 0
-	piscine.PointOne(&n)
-	fmt.Println(n)
+	fmt.Println(piscine.BasicAtoi("12345"))
+	fmt.Println(piscine.BasicAtoi("0000000012345"))
+	fmt.Println(piscine.BasicAtoi("000000"))
 }
