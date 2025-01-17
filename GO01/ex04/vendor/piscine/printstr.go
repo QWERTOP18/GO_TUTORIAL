@@ -3,5 +3,7 @@ package piscine
 import "ft"
 
 func PrintStr(s string) {
-	for 
+    for range s {
+        ft.PrintRune(s)
+    }
 }
