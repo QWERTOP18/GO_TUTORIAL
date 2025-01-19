@@ -1,6 +1,5 @@
 package piscine
 
-import "ft"
 
 func RecursiveFactorial(nb int) int {
 	if nb <= 0 {

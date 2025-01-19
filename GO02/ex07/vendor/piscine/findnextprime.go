@@ -1,17 +1,16 @@
 package piscine
 
-import "ft"
 
-func IsPrime(nb int) int {
+func IsPrime(nb int) bool {
 	if nb <= 1 {
-		return 0
+		return false
 	}
-	for i := 2; i < nb / i ; i++ {
+	for i := 2; i <= nb / i ; i++ {
 		if nb % i == 0 {
-			return 1
+			return false
 		} 
 	}
-	return 0
+	return true
 }
 
 func FindNextPrime(nb int) int {

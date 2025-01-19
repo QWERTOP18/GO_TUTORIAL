@@ -8,12 +8,13 @@ package piscine
 // 	return res
 // }
 func IterativePower(nb int, power int) int {
-	res := 1
-	powpow = power
-	for i := 0; i <= (power >> i); i++ {
-		if (power & 1 << i) {
-			res *= i
-		}
-	} 
-	return res
+    res := 1
+    powpow := nb
+    for i := 0; i < 32 && power > 0; i++ {
+        if power & (1 << i) != 0 {
+            res *= powpow
+        }
+        powpow *= powpow
+    }
+    return res
 }

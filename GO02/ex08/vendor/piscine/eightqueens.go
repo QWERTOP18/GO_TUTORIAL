@@ -3,34 +3,43 @@ package piscine
 import "ft"
 
 
-func PrintLine(line rune[])
-{
-	for _, r range line {
+func PrintLine(line [8]rune) {
+	for _, r := range line {
 		ft.PrintRune(r)
 	}
 	ft.PrintRune('\n')
 }
 
-func CheckDuplicate(depth int ,current rune[], next rune)
-{
+func CheckDuplicate(depth int ,current [8]rune, next rune) bool{
 	for i := 0; i < depth ; i++ {
-		// row
-		if 
-
+		// column
+		if current[i] == next {
+			return true
+		}
+		// Diagonal
+		if int(current[i])-int(next) == depth-i || int(current[i])-int(next) == i -depth{
+            return true 
+        }
 	} 
+	return false
 }
 
-func DepthFirstSeach(depth int, current rune[])
-{
+func DepthFirstSearch(depth int, current [8]rune) {
 	if depth == 8 {
-		return (PrintLine(current))
+		PrintLine(current)
+		return 
 	}
-	for next:= 0; next <= '9'; next++ {
-
+	for next:= '1'; next <= '8'; next++ {
+		if !CheckDuplicate(depth, current, next) {
+			current[depth] = next
+			DepthFirstSearch(depth + 1, current)
+		}
 	}
 }
 
 
 func EightQueens() {
-	DepthFirstSearch(0, ) 
+	// current := make([]rune, 8) 
+	var current [8]rune
+	DepthFirstSearch(0, current) 
 }
