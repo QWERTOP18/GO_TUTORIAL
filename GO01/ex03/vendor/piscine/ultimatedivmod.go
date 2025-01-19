@@ -8,8 +8,9 @@ func UltimateDivMod(a *int, b *int) {
 		fmt.Println("zero division")
 		return
 	}
-	div := *a / *b
-	mod := *a % *b
-	*a = div
-	*b = mod
+	// div := *a / *b
+	// mod := *a % *b
+	// *a = div
+	// *b = mod
+	*a, *b = *a / *b , *a % *b
 }
