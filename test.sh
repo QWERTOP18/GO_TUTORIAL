@@ -19,7 +19,9 @@ select option in "${options[@]}"; do
                 if [ ! -f "go.mod" ]; then
                     go mod init "$(basename "$option")"
                 fi
+                echo -e "\033[33m"
                 go run .
+                echo -e "\033[0m" 
                 cd - || exit
             else
                 echo "Invalid option. Please select a valid test case."
