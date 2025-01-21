@@ -1,6 +1,6 @@
 package piscine
 
-func isValidBase(base string) bool {
+func isBaseValid(base string) bool {
 	l := 0
 	for range base {
 		l++
@@ -21,16 +21,14 @@ func isValidBase(base string) bool {
 	return true
 }
 
+
 func AtoiBase(s string, base string) int {
-	if !isValidBase(base) {
+	if !isBaseValid(base) {
 		return 0
 	}
 	baseLen := 0
 	for range base {
 		baseLen++
-	}
-	if baseLen < 2 {
-		return 0
 	}
 	res := 0
 	for _, c := range s {

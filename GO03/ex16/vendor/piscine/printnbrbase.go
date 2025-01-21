@@ -1,8 +1,5 @@
 package piscine
 
-
-
-
 func isBaseValid(base string) bool {
 	l := 0
 	for range base {
@@ -31,7 +28,7 @@ func PrintNbrBase(nbr int, base string) {
 		return
 	}
 	if !isBaseValid(base) {
-		fmt.Print("NV")
+		PrintNV();
 		return
 	}
 	if nbr < 0 {
@@ -39,9 +36,10 @@ func PrintNbrBase(nbr int, base string) {
 		PrintNbrBase(-nbr, base)
 		return
 	}
-	l := len(base)
-	if nbr >= l {
-		PrintNbrBase(nbr/l, base)
+	l := 0
+	for range base {
+		l++
 	}
-	fmt.Print(string(base[nbr%l]))
+
+
 }

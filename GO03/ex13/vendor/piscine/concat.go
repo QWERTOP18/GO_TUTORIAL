@@ -1,9 +1,5 @@
-package main
-import (
-	"fmt"
-	"piscine"
-)
-func main() {
-	fmt.Println(piscine.IsLower("hello"))
-	fmt.Println(piscine.IsLower("hello!"))
+package piscine
+
+func Concat(str1 string, str2 string) string {
+	return str1 + str2
 }
