@@ -11,3 +11,4 @@ type List struct {
 func ListLast(l *List) interface{} {
     // Your implementation here
 }
+
