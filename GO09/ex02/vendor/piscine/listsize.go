@@ -10,6 +10,13 @@ type List struct {
 	Tail *NodeL
 }
 
-func ListPushBack(l *List, data interface{}) {
+func ListSize(l *List) int {
+	ct := 0
+	it := l.Head
+	for it != nil {
+        ct++
+        it = it.Next
+    }
+	return ct
 }
 

@@ -9,5 +9,13 @@ type List struct {
 }
 
 func ListPushFront(l *List, data interface{}) {
-    // Your implementation here
+	node := &NodeL{Data: data, Next: nil}
+	if l.Head == nil {
+		l.Head = node
+		l.Tail = node
+	} else {
+		node.Next = l.Head
+		l.Head = node
+	}
+	
 }

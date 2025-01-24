@@ -9,6 +9,6 @@ type List struct {
 }
 
 func ListLast(l *List) interface{} {
-    // Your implementation here
+    return l.Tail
 }
 

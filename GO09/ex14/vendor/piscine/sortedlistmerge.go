@@ -11,6 +11,6 @@ type List struct {
 }
 
 func SortedListMerge(n1 *NodeL, n2 *NodeL) *NodeL {
-    // Your implementation here
+
 }
 
