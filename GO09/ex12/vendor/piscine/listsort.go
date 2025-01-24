@@ -4,5 +4,5 @@ type NodeI struct {
 }
 
 func ListSort(l *NodeI) *NodeI {
-    // Your implementation here
+    
 }
