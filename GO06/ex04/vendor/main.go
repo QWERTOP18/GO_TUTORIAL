@@ -21,8 +21,11 @@ func main() {
 			os.Stderr.Write([]byte("tail: illegal offset -- " + os.Args[2] + ":Invalid argument\n"))
 			return 1
 		}
+		for i := 3; i < argc; i++ {
+			piscine.TailFile(os.Args[i], offset, )
+		}
 	}
 	for i := 1; i < argc; i++ {
-		piscine.PrintFile(os.Args[i])
+		piscine.TailFile(os.Args[i])
 	}
 }

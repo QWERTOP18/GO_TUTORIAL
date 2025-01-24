@@ -55,6 +55,10 @@ func stringToInt(s string) (int, bool) {
 	sign := 1
 	start := 0
 
+	if s == nil {
+		return 0, false
+	}
+
 	if s[0] == '-' {
 		sign = -1
 		start = 1
