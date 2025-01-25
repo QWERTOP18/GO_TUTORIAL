@@ -6,5 +6,11 @@ type TreeNode struct {
 }
 
 func BTreeMax(root *TreeNode) *TreeNode {
-    // Your implementation here
+	if root == nil {
+        return nil
+    }
+    for root.Right != nil {
+        root = root.Right
+    }
+    return root
 }

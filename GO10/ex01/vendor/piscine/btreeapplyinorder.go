@@ -6,7 +6,13 @@ type TreeNode struct {
 }
 
 func BTreeApplyInorder(root *TreeNode, f func(...interface{}) (int, error)) {
-    // Your implementation here
+    if root == nil {
+		return 0, nil
+	}
+	left, _ := BTreeApplyInorder(root.Left, f)
+	f(root.Data)
+	right, _ = BTreeApplyInorder(root.Right, f)
+	return left + right + 1, nil
 }
 
 

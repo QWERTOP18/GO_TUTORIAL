@@ -6,7 +6,17 @@ type TreeNode struct {
 }
 
 func BTreeIsBinary(root *TreeNode) bool {
-    // Your implementation here
+	if root == nil {
+		return true
+	}
+	
+	return BTreeIsBinary(root.Left) && BTreeIsBinary(root.Right)
 }
 
+// if BTreeIsBinary(root.Left) == false {
+// 	return false
+// }
+// if BTreeIsBinary(root.Right) == false {
+// 	return false
+// }
 

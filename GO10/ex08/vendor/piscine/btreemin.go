@@ -6,5 +6,11 @@ type TreeNode struct {
 }
 
 func BTreeMin(root *TreeNode) *TreeNode {
-    // Your implementation here
+	if root == nil {
+        return nil
+    }
+    for root.Left != nil {
+        root = root.Left
+    }
+    return root
 }
