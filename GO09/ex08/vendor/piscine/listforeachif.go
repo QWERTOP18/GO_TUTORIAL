@@ -36,3 +36,17 @@ func ListForEachIf(l *List, f func(*NodeL), cond func(*NodeL) bool) {
         current = current.Next
     }
 }
+
+/******************* PREVIOUS EXERCISE *******************/
+
+func ListPushBack(l *List, data interface{}) {
+	node := &NodeL{Data: data, Next: nil}
+	if l.Head == nil {
+		l.Head = node
+		l.Tail = node
+	} else {
+		l.Tail.Next = node
+		l.Tail = node
+	}
+	
+}

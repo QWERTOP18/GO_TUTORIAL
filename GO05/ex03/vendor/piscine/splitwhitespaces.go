@@ -1,16 +1,16 @@
 package piscine
 
-func SplitWhiteSpaces(str string) []string {
+func SplitWhiteSpaces(s string) []string {
 	var result []string
 	var word string
-	for _, s := range str {
-		if s == ' ' || s == '\t' || s == '\n' {
+	for _, r := range s {
+		if r == ' ' || r == '\t' || r == '\n' {
 			if word != "" {
 				result = append(result, word)
 				word = ""
 			}
 		} else {
-			word += string(s)
+			word += string(r)
 		}
 	}
 	if word != "" {

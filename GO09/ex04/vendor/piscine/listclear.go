@@ -19,3 +19,16 @@ func ListClear(l *List){
     l.Tail = nil
 }
 
+/******************* PREVIOUS EXERCISE *******************/
+
+func ListPushBack(l *List, data interface{}) {
+	node := &NodeL{Data: data, Next: nil}
+	if l.Head == nil {
+		l.Head = node
+		l.Tail = node
+	} else {
+		l.Tail.Next = node
+		l.Tail = node
+	}
+	
+}

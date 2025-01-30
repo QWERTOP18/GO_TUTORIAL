@@ -1,3 +1,4 @@
+package piscine
 type NodeL struct {
     Data interface{}
     Next *NodeL
@@ -21,4 +22,18 @@ func ListFind(l *List, ref interface{}, comp func(a, b interface{}) bool) *inter
         current = current.Next
     }
     return nil
+}
+
+/******************* PREVIOUS EXERCISE *******************/
+
+func ListPushBack(l *List, data interface{}) {
+	node := &NodeL{Data: data, Next: nil}
+	if l.Head == nil {
+		l.Head = node
+		l.Tail = node
+	} else {
+		l.Tail.Next = node
+		l.Tail = node
+	}
+	
 }

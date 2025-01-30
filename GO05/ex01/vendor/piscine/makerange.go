@@ -1,12 +1,15 @@
 package piscine
 
+
+
+
 func MakeRange(min, max int) []int {
 	if min >= max {
 		return nil
 	}
-	var result []int
-	for i := min; i < max; i++ {
-		result = append(result, i)
+	result := make([]int, max-min)
+	for i := 0; i < max-min; i++ {
+		result[i] = min + i
 	}
 	return result
 }

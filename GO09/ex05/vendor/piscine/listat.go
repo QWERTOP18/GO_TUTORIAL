@@ -1,6 +1,13 @@
+package piscine
+
 type NodeL struct {
-    Data interface{}
-    Next *NodeL
+	Data interface{}
+	Next *NodeL
+}
+
+type List struct {
+	Head *NodeL
+	Tail *NodeL
 }
 
 func ListAt(l *NodeL, pos int) *NodeL {
@@ -8,10 +15,24 @@ func ListAt(l *NodeL, pos int) *NodeL {
         return nil
     }
 
-    current := l.Head
-    for i := 0; i < pos && current!= nil; i++ {
-        current = current.Next
+    
+    for i := 0; i < pos && l!= nil; i++ {
+        l = l.Next
     }
 
-    return current
+    return l
+}
+
+/******************* PREVIOUS EXERCISE *******************/
+
+func ListPushBack(l *List, data interface{}) {
+	node := &NodeL{Data: data, Next: nil}
+	if l.Head == nil {
+		l.Head = node
+		l.Tail = node
+	} else {
+		l.Tail.Next = node
+		l.Tail = node
+	}
+	
 }

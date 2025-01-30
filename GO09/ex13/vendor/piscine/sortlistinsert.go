@@ -1,42 +1,28 @@
-package main
+package piscine
 
-import (
-    "fmt"
-    "piscine"
-)
 
-func PrintList(l *piscine.NodeI) {
-    it := l
-    for it != nil {
-        fmt.Print(it.Data, " -> ")
-        it = it.Next
-    }
-    fmt.Print(nil, "\n")
+type NodeI struct {
+    Data int 
+    Next *NodeI
 }
 
-func listPushBack(l *piscine.NodeI, data int) *piscine.NodeI {
-    n := &piscine.NodeI{Data: data}
+func SortListInsert(l *NodeI, data_ref int) *NodeI{
     if l == nil {
-        return n
+        return &NodeI{Data: data_ref, Next: nil}
     }
-    iterator := l
-    for iterator.Next != nil {
-        iterator = iterator.Next
+    origin := l
+    if l.Data > data_ref {
+        return &NodeI{Data: data_ref, Next: l}
     }
-    iterator.Next = n
-    return l
-}
-
-func main() {
-    var link *piscine.NodeI
-
-    link = listPushBack(link, 1)
-    link = listPushBack(link, 4)
-    link = listPushBack(link, 9)
-
-    PrintList(link)
-
-    link = piscine.SortListInsert(link, -2)
-    link = piscine.SortListInsert(link, 2)
-    PrintList(link)
+    for l.Next != nil {
+        next := l.Next
+        if next.Data > data_ref {
+            new := &NodeI{Data: data_ref, Next: next}
+            l.Next = new
+            return origin
+        }
+        l = next
+    }
+    l.Next = &NodeI{Data: data_ref, Next: nil}
+    return origin
 }
